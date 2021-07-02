@@ -1,6 +1,4 @@
 import random
-import matplotlib.pyplot as plt
-
 import fire
 
 low = 0
@@ -41,6 +39,7 @@ def plot(iterations, low=low, high=high):
     low (float): The lowest possible value.
     high (float): The highest possible value.
   """
+  import matplotlib.pyplot as plt
   s = [weighted_random(low, high) for _ in range(iterations)]
   _ = plt.hist(s, bins='auto')
   plt.show()
