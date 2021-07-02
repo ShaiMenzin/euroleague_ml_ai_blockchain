@@ -60,8 +60,18 @@ def calculate_scores(*teams):
 
     for team, score in zip(bracket, scores):
       print(f"{team}: {score}")
+
+    # Check if the algorithm predicted a draw
+    if len(set(scores)) == 1:
+      # Predict the winning team
+      print(f"{random.choice(bracket)} {random.choice(['overtime', 'penalties'])}")
+
       
+    additional_bet = weighted_random(0, 2)
+    if additional_bet != 0:
+      print(f"Additional bet: {additional_bet}")
     print()
+
 
 
 if __name__ == "__main__":
